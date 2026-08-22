@@ -1,0 +1,333 @@
+<!DOCTYPE html><html lang="en" class="scroll-smooth"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e2e2e4",
+                    "on-secondary-fixed": "#002107",
+                    "primary-container": "#1d1d1f",
+                    "outline": "#77767b",
+                    "surface-container": "#eeeef0",
+                    "error-container": "#ffdad6",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-container": "#868587",
+                    "surface-bright": "#f9f9fb",
+                    "primary-fixed": "#e4e2e4",
+                    "secondary-container": "#abf4ac",
+                    "on-surface": "#1a1c1d",
+                    "surface-tint": "#5f5e60",
+                    "on-surface-variant": "#46464a",
+                    "on-tertiary-container": "#4f8ab6",
+                    "secondary-fixed": "#abf4ac",
+                    "on-background": "#1a1c1d",
+                    "on-error": "#ffffff",
+                    "surface": "#f9f9fb",
+                    "on-secondary-fixed-variant": "#07521d",
+                    "tertiary-container": "#001f32",
+                    "tertiary-fixed-dim": "#93cdfc",
+                    "inverse-surface": "#2f3132",
+                    "primary-fixed-dim": "#c8c6c8",
+                    "tertiary": "#000307",
+                    "background": "#f9f9fb",
+                    "secondary": "#286b33",
+                    "on-tertiary-fixed-variant": "#004b71",
+                    "surface-container-highest": "#e2e2e4",
+                    "on-primary-fixed": "#1b1b1d",
+                    "outline-variant": "#c7c6ca",
+                    "surface-container-low": "#f3f3f5",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed-variant": "#474649",
+                    "surface-dim": "#d9dadc",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed": "#001e30",
+                    "on-secondary-container": "#2e7238",
+                    "tertiary-fixed": "#cbe6ff",
+                    "on-secondary": "#ffffff",
+                    "primary": "#030304",
+                    "inverse-primary": "#c8c6c8",
+                    "surface-container-high": "#e8e8ea",
+                    "secondary-fixed-dim": "#90d792",
+                    "inverse-on-surface": "#f0f0f2",
+                    "error": "#ba1a1a",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "8px",
+                    "xl": "12px",
+                    "2xl": "20px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "4px",
+                    "stack-lg": "32px",
+                    "margin-mobile": "20px",
+                    "gutter": "24px",
+                    "container-max": "1200px",
+                    "margin-desktop": "40px",
+                    "stack-sm": "8px",
+                    "stack-md": "16px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Inter", "sans-serif"],
+                    "body-md": ["Inter", "sans-serif"],
+                    "label-sm": ["Inter", "sans-serif"],
+                    "title-md": ["Inter", "sans-serif"],
+                    "body-lg": ["Inter", "sans-serif"],
+                    "headline-lg-mobile": ["Inter", "sans-serif"],
+                    "display-lg": ["Inter", "sans-serif"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["15px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-sm": ["13px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "title-md": ["20px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "body-lg": ["17px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script><meta charset="utf-8"><link rel="stylesheet" href="/static/ambient-blobs.css"><script src="https://accounts.google.com/gsi/client" async defer></script><script src="/static/auth.js" defer></script></head><body class="bg-surface text-on-surface font-body-md antialiased selection:bg-secondary-container selection:text-on-secondary-fixed">
+<div class="ambient-blobs" aria-hidden="true">
+  <div class="blob-parallax" data-speed="0.15"><div class="blob blob-1"></div></div>
+  <div class="blob-parallax" data-speed="-0.1"><div class="blob blob-2"></div></div>
+  <div class="blob-parallax" data-speed="0.22"><div class="blob blob-3"></div></div>
+</div>
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-container-highest/80 backdrop-blur-xl border-b border-outline-variant/30">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-stack-sm max-w-container-max mx-auto h-16">
+<div class="flex items-center gap-stack-md">
+<span class="font-headline-lg-mobile md:font-headline-lg text-primary tracking-tight font-bold">SkinSense AI</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a href="/" class="font-body-md text-primary font-bold border-b-2 border-primary pb-1">Home</a>
+<a href="/ingredients" class="font-body-md text-on-surface-variant hover:text-primary transition-colors">Ingredients</a>
+<a href="/chat" class="font-body-md text-on-surface-variant hover:text-primary transition-colors">AI Analysis</a>
+</div>
+<div class="flex items-center gap-4">
+  <!-- Google Login Button Container -->
+  <div id="google-signin-container" class="flex items-center">
+    <div id="g_id_onload"
+         data-client_id="168000080775-2aohtfi9hrk6v0naq27uj94rrnhpbpcb.apps.googleusercontent.com"
+         data-context="signin"
+         data-ux_mode="popup"
+         data-callback="handleCredentialResponse"
+         data-auto_prompt="false">
+    </div>
+    <div class="g_id_signin"
+         data-type="standard"
+         data-shape="pill"
+         data-theme="outline"
+         data-text="signin_with"
+         data-size="medium"
+         data-logo_alignment="left">
+    </div>
+  </div>
+
+  <!-- User Profile Container (Hidden by default) -->
+  <div id="user-profile-container" class="hidden flex items-center gap-3">
+    <img id="user-avatar" src="" alt="Avatar" class="w-8 h-8 rounded-full border border-outline-variant/30">
+    <span id="user-name" class="hidden sm:inline font-body-md text-primary font-medium"></span>
+    <button onclick="handleLogout()" class="text-xs text-on-surface-variant hover:text-error transition-colors px-2 py-1 bg-surface-container rounded-md">
+      Logout
+    </button>
+  </div>
+  <span class="text-xs text-on-surface-variant/60 font-label-sm uppercase tracking-wider bg-surface-container px-3 py-1.5 rounded-full">v1 Local</span>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="pt-24 relative">
+<!-- Hero Section -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto pt-16 pb-24 text-center">
+<div class="max-w-4xl mx-auto space-y-stack-lg transition-all duration-1000 ease-out opacity-100 translate-y-0">
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight text-balance">
+                    Your Personal AI Skincare Guide
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto text-balance">
+                    Understand your skin, learn about skincare ingredients, and receive personalized skincare guidance powered by precision science and artificial intelligence.
+                </p>
+<div class="pt-4">
+<a href="/chat" class="inline-block px-8 py-4 bg-primary text-on-primary rounded-full font-title-md hover:opacity-90 transition-all active:scale-[0.98] shadow-lg">
+                        Start Your Skincare Journey
+                    </a>
+</div>
+</div>
+</section>
+<!-- Interactive Feature Cards -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-gutter mb-24">
+<!-- Card 1: Ingredients -->
+<a href="/ingredients" class="group block no-underline bg-surface-container-lowest border border-outline-variant/40 rounded-2xl p-stack-lg flex flex-col justify-between overflow-hidden relative transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-primary/20 active:scale-[0.98] cursor-pointer">
+<div class="relative z-10 space-y-stack-md pr-8">
+<span class="inline-flex items-center px-3 py-1 bg-secondary-container/15 text-on-secondary-fixed-variant rounded-full text-label-sm mb-2">Scientific Database</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Learn About Skincare Ingredients</h2>
+<p class="font-body-md text-on-surface-variant">
+                        Explore different skincare ingredients, understand how they work, who should use them, their benefits, and how they fit into a skincare routine.
+                    </p>
+<div class="pt-4">
+<div class="inline-flex items-center gap-2 px-6 py-3 bg-surface-container-low text-on-surface font-title-md rounded-xl border border-outline-variant/60 shadow-sm group-hover:bg-primary group-hover:text-on-primary group-hover:border-primary transition-all duration-300">
+                            Explore Ingredients
+                            <span class="material-symbols-outlined transition-transform duration-300 group-hover:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Illustration Element -->
+<div class="mt-8 flex justify-end">
+<div class="w-full h-48 bg-surface-container rounded-xl overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
+<img src="/static/ingredients.jpg" class="w-full h-full object-cover opacity-80" alt="Skincare ingredients">
+</div>
+</div>
+</a>
+<!-- Card 2: AI Analysis -->
+<a href="/chat" class="group block no-underline bg-surface-container-lowest border border-outline-variant/40 rounded-2xl p-stack-lg flex flex-col justify-between overflow-hidden relative transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-primary/20 active:scale-[0.98] cursor-pointer">
+<div class="relative z-10 space-y-stack-md pr-8">
+<span class="inline-flex items-center px-3 py-1 bg-tertiary-fixed/30 text-on-tertiary-fixed-variant rounded-full text-label-sm mb-2">AI Diagnosis</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Start AI Skin Analysis</h2>
+<p class="font-body-md text-on-surface-variant">
+                        Describe your skin concerns in natural language and receive a personalized skincare routine generated by AI, backed by clinical research and dermatological standards.
+                    </p>
+<div class="pt-4">
+<div class="inline-flex items-center gap-2 px-6 py-3 bg-surface-container-low text-on-surface font-title-md rounded-xl border border-outline-variant/60 shadow-sm group-hover:bg-primary group-hover:text-on-primary group-hover:border-primary transition-all duration-300">
+                            Start Analysis
+                            <span class="material-symbols-outlined transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12" data-icon="auto_awesome">auto_awesome</span>
+</div>
+</div>
+</div>
+<!-- Illustration Element -->
+<div class="mt-8 flex justify-end">
+<div class="w-full h-48 bg-surface-container rounded-xl overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
+<img src="/static/analysis.jpg" class="w-full h-full object-cover opacity-80" alt="AI Skin Scan">
+</div>
+</div>
+</a>
+</section>
+<!-- Why Choose SkinSense AI (Trust Markers) -->
+<section class="bg-surface-container-low py-24">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center transition-all duration-1000 ease-out opacity-100 translate-y-0">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-16">Why Trust SkinSense AI</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="p-8 bg-surface-container-lowest rounded-2xl border border-outline-variant/20 soft-shadow">
+<div class="w-12 h-12 bg-secondary-container/30 rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined text-on-secondary-fixed-variant" data-icon="science">science</span>
+</div>
+<h3 class="font-title-md text-title-md text-primary mb-3">Evidence Based</h3>
+<p class="text-on-surface-variant font-body-md">Every ingredient analysis is cross-referenced with peer-reviewed dermatological studies and clinical trials.</p>
+</div>
+<div class="p-8 bg-surface-container-lowest rounded-2xl border border-outline-variant/20 soft-shadow">
+<div class="w-12 h-12 bg-tertiary-fixed/30 rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined text-on-tertiary-fixed-variant" data-icon="psychology">psychology</span>
+</div>
+<h3 class="font-title-md text-title-md text-primary mb-3">Precision AI</h3>
+<p class="text-on-surface-variant font-body-md">Our neural networks are trained on thousands of skin profiles to identify patterns and provide highly accurate recommendations.</p>
+</div>
+<div class="p-8 bg-surface-container-lowest rounded-2xl border border-outline-variant/20 soft-shadow">
+<div class="w-12 h-12 bg-primary-container/10 rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="verified_user">verified_user</span>
+</div>
+<h3 class="font-title-md text-title-md text-primary mb-3">Privacy First</h3>
+<p class="text-on-surface-variant font-body-md">Your personal skin data and analysis history are encrypted and never shared with third parties without your explicit consent.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 3-Step Workflow -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-16 transition-all duration-1000 ease-out opacity-100 translate-y-0">
+<h2 class="font-headline-lg text-headline-lg text-primary">Your Path to Better Skin</h2>
+<p class="text-on-surface-variant font-body-lg mt-4">A simple three-step journey to scientific skincare.</p>
+</div>
+<div class="flex flex-col md:flex-row items-start justify-between gap-12 relative transition-all duration-1000 ease-out opacity-100 translate-y-0">
+<!-- Connector Line (Desktop) -->
+<div class="hidden md:block absolute top-12 left-0 w-full h-[1px] bg-outline-variant/30 -z-10"></div>
+<!-- Step 1 -->
+<div class="flex-1 text-center space-y-4">
+<div class="w-24 h-24 rounded-full bg-surface-container-highest border-4 border-surface mx-auto flex items-center justify-center relative shadow-sm">
+<span class="absolute -top-2 -left-2 w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold">1</span>
+<span class="material-symbols-outlined text-3xl" data-icon="biotech">biotech</span>
+</div>
+<h3 class="font-title-md text-title-md text-primary">Analyze</h3>
+<p class="text-on-surface-variant font-body-md">Tell us about your concerns, skin type, and lifestyle through our intelligent assessment interface.</p>
+</div>
+<!-- Step 2 -->
+<div class="flex-1 text-center space-y-4">
+<div class="w-24 h-24 rounded-full bg-surface-container-highest border-4 border-surface mx-auto flex items-center justify-center relative shadow-sm">
+<span class="absolute -top-2 -left-2 w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold">2</span>
+<span class="material-symbols-outlined text-3xl" data-icon="menu_book">menu_book</span>
+</div>
+<h3 class="font-title-md text-title-md text-primary">Learn</h3>
+<p class="text-on-surface-variant font-body-md">Discover the chemistry behind your products and understand exactly how each ingredient affects your unique skin barrier.</p>
+</div>
+<!-- Step 3 -->
+<div class="flex-1 text-center space-y-4">
+<div class="w-24 h-24 rounded-full bg-surface-container-highest border-4 border-surface mx-auto flex items-center justify-center relative shadow-sm">
+<span class="absolute -top-2 -left-2 w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold">3</span>
+<span class="material-symbols-outlined text-3xl" data-icon="calendar_today">calendar_today</span>
+</div>
+<h3 class="font-title-md text-title-md text-primary">Routine</h3>
+<p class="text-on-surface-variant font-body-md">Receive a custom-tailored morning and evening routine designed to address your specific goals and sensitivities.</p>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+
+</main>
+<!-- Footer -->
+<footer class="w-full py-stack-lg mt-stack-lg bg-surface-container-low dark:bg-primary-container relative">
+<div class="flex flex-col md:flex-row justify-between items-start gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="space-y-4">
+<span class="font-title-md text-title-md font-bold text-primary dark:text-primary-fixed">SkinSense AI</span>
+<p class="max-w-xs text-on-surface-variant dark:text-on-primary-container/70 font-body-md">
+                    © 2024 SkinSense AI. Precision Skincare through Science.
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-12">
+<div class="space-y-2 flex flex-col">
+<span class="font-label-sm uppercase tracking-widest text-on-surface-variant/50 mb-2">Explore</span>
+<a class="text-on-surface-variant dark:text-on-primary-container/70 hover:text-primary transition-colors font-body-md" href="#">Scientific Method</a>
+<a class="text-on-surface-variant dark:text-on-primary-container/70 hover:text-primary transition-colors font-body-md" href="mailto:skinsence2@gmail.com">Contact Us</a>
+</div>
+<div class="space-y-2 flex flex-col">
+<span class="font-label-sm uppercase tracking-widest text-on-surface-variant/50 mb-2">Legal</span>
+<a class="text-on-surface-variant dark:text-on-primary-container/70 hover:text-primary transition-colors font-body-md" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-on-primary-container/70 hover:text-primary transition-colors font-body-md" href="#">Terms of Service</a>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:bg-primary-container hover:text-white transition-all cursor-pointer">
+<span class="material-symbols-outlined text-body-md" data-icon="language">language</span>
+</div>
+<div class="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:bg-primary-container hover:text-white transition-all cursor-pointer">
+<span class="material-symbols-outlined text-body-md" data-icon="public">public</span>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions and subtle scroll effects
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    }
+                });
+            }, observerOptions);
+
+            // Adding animation classes to sections
+            const sections = document.querySelectorAll('section > div');
+            sections.forEach(section => {
+                section.classList.add('transition-all', 'duration-1000', 'ease-out', 'opacity-0', 'translate-y-10');
+                observer.observe(section);
+            });
+        });
+    </script>
+    <script src="/static/ambient-blobs.js"></script>
+</body></html>

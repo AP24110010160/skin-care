@@ -1,0 +1,99 @@
+/*
+  Ambient background blobs -- slow, decorative, drifting shapes,
+  now with scroll-linked parallax movement layered on top.
+
+  Built to match DESIGN.md: soft tonal layering, glassmorphism-friendly,
+  never overwhelms the white space.
+
+  STRUCTURE (why there are two nested divs per blob):
+  - The OUTER div (.blob-parallax) is moved by JS based on scroll position.
+  - The INNER div (.blob) runs its own independent slow CSS drift animation.
+  Keeping these as two separate elements means the JS-driven scroll offset
+  and the CSS idle-drift animation never fight over the same `transform`
+  property.
+
+  USAGE:
+  1. Link this file in the <head> of home.html, ingredients.html, chat.html:
+       <link rel="stylesheet" href="/static/ambient-blobs.css">
+  2. Also include the companion script before </body>:
+       <script src="/static/ambient-blobs.js"></script>
+  3. Paste the markup snippet (bottom of this file, in the comment)
+     immediately after <body> in each page.
+  4. Make sure your main content container has `position: relative;
+     z-index: 1;` so it sits above the blobs.
+*/
+
+.ambient-blobs {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none; /* never intercepts clicks/scroll */
+}
+
+.blob-parallax {
+  position: absolute;
+  will-change: transform;
+  transition: transform 0.1s linear; /* smooths out scroll-event jitter */
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.28;
+  will-change: transform;
+}
+
+/* Sage accent (secondary-container from DESIGN.md) */
+.blob-parallax[data-speed="0.15"] { top: -10%; left: -8%; }
+.blob-1 {
+  width: 420px;
+  height: 420px;
+  background: #abf4ac;
+  animation: drift-1 34s ease-in-out infinite;
+}
+
+/* Soft blue accent (tertiary-fixed from DESIGN.md) */
+.blob-parallax[data-speed="-0.1"] { top: 40%; right: -10%; }
+.blob-2 {
+  width: 380px;
+  height: 380px;
+  background: #cbe6ff;
+  animation: drift-2 40s ease-in-out infinite;
+}
+
+/* Neutral warm-grey accent (primary-fixed from DESIGN.md), smaller/subtler */
+.blob-parallax[data-speed="0.22"] { bottom: -8%; left: 25%; }
+.blob-3 {
+  width: 300px;
+  height: 300px;
+  background: #e4e2e4;
+  opacity: 0.35;
+  animation: drift-3 46s ease-in-out infinite;
+}
+
+@keyframes drift-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(60px, 40px) scale(1.08); }
+  66%      { transform: translate(-30px, 70px) scale(0.95); }
+}
+
+@keyframes drift-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(-70px, -50px) scale(1.1); }
+}
+
+@keyframes drift-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(40px, -60px) scale(1.05); }
+}
+
+/* Respect accessibility preferences -- freeze both the idle drift AND
+   the scroll parallax (handled in the JS file) for people who've asked
+   their OS to reduce motion. */
+@media (prefers-reduced-motion: reduce) {
+  .blob {
+    animation: none;
+  }
+}

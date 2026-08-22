@@ -1,0 +1,542 @@
+<!DOCTYPE html><html lang="en" class="light"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e2e2e4",
+                    "on-secondary-fixed": "#002107",
+                    "primary-container": "#1d1d1f",
+                    "outline": "#77767b",
+                    "surface-container": "#eeeef0",
+                    "error-container": "#ffdad6",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-container": "#868587",
+                    "surface-bright": "#f9f9fb",
+                    "primary-fixed": "#e4e2e4",
+                    "secondary-container": "#abf4ac",
+                    "on-surface": "#1a1c1d",
+                    "surface-tint": "#5f5e60",
+                    "on-surface-variant": "#46464a",
+                    "on-tertiary-container": "#4f8ab6",
+                    "secondary-fixed": "#abf4ac",
+                    "on-background": "#1a1c1d",
+                    "on-error": "#ffffff",
+                    "surface": "#f9f9fb",
+                    "on-secondary-fixed-variant": "#07521d",
+                    "tertiary-container": "#001f32",
+                    "tertiary-fixed-dim": "#93cdfc",
+                    "inverse-surface": "#2f3132",
+                    "primary-fixed-dim": "#c8c6c8",
+                    "tertiary": "#000307",
+                    "background": "#f9f9fb",
+                    "secondary": "#286b33",
+                    "on-tertiary-fixed-variant": "#004b71",
+                    "surface-container-highest": "#e2e2e4",
+                    "on-primary-fixed": "#1b1b1d",
+                    "outline-variant": "#c7c6ca",
+                    "surface-container-low": "#f3f3f5",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed-variant": "#474649",
+                    "surface-dim": "#d9dadc",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed": "#001e30",
+                    "on-secondary-container": "#2e7238",
+                    "tertiary-fixed": "#cbe6ff",
+                    "on-secondary": "#ffffff",
+                    "primary": "#030304",
+                    "inverse-primary": "#c8c6c8",
+                    "surface-container-high": "#e8e8ea",
+                    "secondary-fixed-dim": "#90d792",
+                    "inverse-on-surface": "#f0f0f2",
+                    "error": "#ba1a1a",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "4px",
+                    "stack-lg": "32px",
+                    "margin-mobile": "20px",
+                    "gutter": "24px",
+                    "container-max": "1200px",
+                    "margin-desktop": "40px",
+                    "stack-sm": "8px",
+                    "stack-md": "16px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "title-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "display-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["15px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-sm": ["13px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "title-md": ["20px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "body-lg": ["17px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    }catch(_e){}</script>
+    <style>
+        body {
+            background-color: #f9f9fb;
+            color: #1a1c1d;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .chat-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
+        .chat-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .chat-scroll::-webkit-scrollbar-thumb {
+            background: #e2e2e4;
+            border-radius: 10px;
+        }
+    </style>
+    <link rel="stylesheet" href="/static/ambient-blobs.css">
+    <style>
+        /* Page-specific overrides for Chat view */
+        .ambient-blobs .blob {
+            opacity: 0.12; /* Subtler blobs for focused chat layout */
+        }
+        /* Make sidebar and chat area semi-transparent so blobs show through */
+        aside {
+            background-color: rgba(243, 243, 245, 0.75) !important;
+            backdrop-filter: blur(16px);
+        }
+        section.flex-grow {
+            background-color: rgba(249, 249, 251, 0.6) !important;
+            backdrop-filter: blur(12px);
+        }
+    </style>
+    <meta charset="utf-8"><script src="https://accounts.google.com/gsi/client" async defer></script><script src="/static/auth.js" defer></script></head><body class="bg-background text-on-background font-body-md selection:bg-secondary-container/30">
+<div class="ambient-blobs" aria-hidden="true">
+  <div class="blob-parallax" data-speed="0.15"><div class="blob blob-1"></div></div>
+  <div class="blob-parallax" data-speed="-0.1"><div class="blob blob-2"></div></div>
+  <div class="blob-parallax" data-speed="0.22"><div class="blob blob-3"></div></div>
+</div>
+<!-- Header (Shared Component: TopNavBar) -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-stack-sm max-w-container-max mx-auto h-16">
+<div class="font-headline-lg-mobile md:font-headline-lg text-primary tracking-tight font-bold">SkinSense AI</div>
+<div class="hidden md:flex items-center gap-gutter">
+<a href="/" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors">Home</a>
+<a href="/ingredients" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors">Ingredients</a>
+<a href="/chat" class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary pb-1">AI Analysis</a>
+</div>
+<div class="flex items-center gap-4">
+  <!-- Google Login Button Container -->
+  <div id="google-signin-container" class="flex items-center">
+    <div id="g_id_onload"
+         data-client_id="168000080775-2aohtfi9hrk6v0naq27uj94rrnhpbpcb.apps.googleusercontent.com"
+         data-context="signin"
+         data-ux_mode="popup"
+         data-callback="handleCredentialResponse"
+         data-auto_prompt="false">
+    </div>
+    <div class="g_id_signin"
+         data-type="standard"
+         data-shape="pill"
+         data-theme="outline"
+         data-text="signin_with"
+         data-size="medium"
+         data-logo_alignment="left">
+    </div>
+  </div>
+
+  <!-- User Profile Container (Hidden by default) -->
+  <div id="user-profile-container" class="hidden flex items-center gap-3">
+    <img id="user-avatar" src="" alt="Avatar" class="w-8 h-8 rounded-full border border-outline-variant/30">
+    <span id="user-name" class="hidden sm:inline font-body-md text-primary font-medium"></span>
+    <button onclick="handleLogout()" class="text-xs text-on-surface-variant hover:text-error transition-colors px-2 py-1 bg-surface-container rounded-md">
+      Logout
+    </button>
+  </div>
+  <span class="text-xs text-on-surface-variant/60 font-label-sm uppercase tracking-wider bg-surface-container px-3 py-1.5 rounded-full">v1 Local</span>
+</div>
+</div>
+</nav>
+<!-- Main Content Cluster -->
+<main class="pt-16 h-[calc(100vh-4rem)] flex overflow-hidden relative">
+<!-- Sidebar: History (Hidden on mobile) -->
+<aside class="hidden lg:flex w-72 flex-col bg-surface-container-low border-r border-outline-variant/20 p-stack-md">
+<div class="flex items-center justify-between mb-stack-lg">
+<h2 class="font-title-md text-title-md text-primary font-bold">History</h2>
+<button onclick="startNewChat()" class="p-2 hover:bg-surface-variant rounded-xl transition-colors" title="New Chat">
+<span class="material-symbols-outlined">add_comment</span>
+</button>
+</div>
+<nav id="chat-history-list" class="space-y-stack-sm overflow-y-auto chat-scroll flex-grow">
+    <!-- History Items populated dynamically -->
+</nav>
+<div class="mt-auto pt-stack-md border-t border-outline-variant/20">
+<div class="flex items-center gap-3 p-2 rounded-xl">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-white text-xs">U</div>
+<div class="flex-grow">
+<p class="text-xs font-bold text-primary">Local User</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Chat Container -->
+<section class="flex-grow relative flex flex-col items-center bg-background h-full">
+<!-- Chat Window -->
+<div class="relative z-10 w-full max-w-3xl h-full flex flex-col px-margin-mobile md:px-0">
+<!-- Chat Feed -->
+<div class="flex-grow overflow-y-auto chat-scroll py-stack-lg space-y-stack-lg pr-2" id="chat-feed">
+    <!-- Initial welcome message templates when no active conversation exists -->
+    <div id="initial-welcome-message" class="space-y-stack-lg">
+        <div class="flex gap-stack-md animate-chat">
+            <div class="w-8 h-8 flex-shrink-0 bg-primary rounded-full flex items-center justify-center">
+                <span class="material-symbols-outlined text-white text-lg">auto_awesome</span>
+            </div>
+            <div class="max-w-[85%]">
+                <p class="font-body-md text-body-md text-on-surface">Hello! I'm your SkinSense AI specialist. Tell me about your skin goals, describe any concerns, or ask if specific ingredients can be mixed together.</p>
+                <div class="mt-stack-md grid grid-cols-1 md:grid-cols-2 gap-stack-sm">
+                    <button class="text-left p-stack-md bg-surface-container border border-outline-variant/30 rounded-xl hover:border-primary transition-all text-on-surface-variant text-sm" onclick="sendSuggestedPrompt('I have acne')">
+                        "I have acne"
+                    </button>
+                    <button class="text-left p-stack-md bg-surface-container border border-outline-variant/30 rounded-xl hover:border-primary transition-all text-on-surface-variant text-sm" onclick="sendSuggestedPrompt('My skin is oily')">
+                        "My skin is oily"
+                    </button>
+                    <button class="text-left p-stack-md bg-surface-container border border-outline-variant/30 rounded-xl hover:border-primary transition-all text-on-surface-variant text-sm col-span-full" onclick="sendSuggestedPrompt('I need a beginner skincare routine')">
+                        "I need a beginner skincare routine"
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Active chat message bubbles will be inserted here -->
+    <div id="active-messages" class="space-y-stack-lg"></div>
+
+    <!-- Loading message container -->
+    <div id="loading-bubble" class="flex gap-stack-md animate-chat hidden">
+        <div class="w-8 h-8 flex-shrink-0 bg-primary rounded-full flex items-center justify-center">
+            <span class="material-symbols-outlined text-white text-lg animate-spin">autorenew</span>
+        </div>
+        <div class="max-w-[85%] bg-surface-container p-stack-md rounded-2xl rounded-tl-none">
+            <p class="font-body-md text-body-md text-on-surface-variant italic">Thinking...</p>
+        </div>
+    </div>
+</div>
+
+<!-- Chat Input Area -->
+<div class="mt-auto pb-6 pt-stack-sm bg-gradient-to-t from-background via-background to-transparent">
+<div class="relative group">
+<textarea id="user-input" class="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-primary/20 rounded-2xl px-6 py-4 pr-16 text-on-surface placeholder:text-on-surface-variant/50 transition-all resize-none shadow-sm" placeholder="Describe your skin concerns or ask about mixing ingredients..." rows="1"></textarea>
+<div class="absolute right-3 bottom-3 flex items-center gap-2">
+<button onclick="handleSendClick()" class="p-2 bg-primary text-white rounded-xl hover:scale-105 active:scale-95 transition-all">
+<span class="material-symbols-outlined">arrow_upward</span>
+</button>
+</div>
+</div>
+<p class="text-[10px] text-center mt-3 text-on-surface-variant/50 uppercase tracking-widest">Powered by SkinSense AI • v1 Local LLM & Validation</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-stack-md bg-surface-container-low border-t border-outline-variant/10 text-center text-xs text-on-surface-variant/60">
+<p>© 2024 SkinSense AI. Precision Skincare through Science. Disclaimer: Education only, not medical advice.</p>
+</footer>
+
+<script>
+    let conversations = [];
+    let currentConversationId = null;
+
+    // Load conversation state on start
+    function init() {
+        const storedConvs = localStorage.getItem('skinsense_conversations');
+        const storedId = localStorage.getItem('skinsense_current_id');
+        
+        if (storedConvs) {
+            conversations = JSON.parse(storedConvs);
+        }
+        if (storedId) {
+            currentConversationId = storedId;
+        }
+
+        renderHistoryList();
+        if (currentConversationId) {
+            loadConversation(currentConversationId);
+        } else {
+            showWelcomeMessage();
+        }
+    }
+
+    function saveState() {
+        localStorage.setItem('skinsense_conversations', JSON.stringify(conversations));
+        localStorage.setItem('skinsense_current_id', currentConversationId);
+    }
+
+    function showWelcomeMessage() {
+        document.getElementById('initial-welcome-message').classList.remove('hidden');
+        document.getElementById('active-messages').innerHTML = '';
+        currentConversationId = null;
+        saveState();
+        renderHistoryList();
+    }
+
+    function startNewChat() {
+        showWelcomeMessage();
+    }
+
+    function renderHistoryList() {
+        const listContainer = document.getElementById('chat-history-list');
+        listContainer.innerHTML = '';
+
+        if (conversations.length === 0) {
+            listContainer.innerHTML = '<p class="text-xs text-on-surface-variant/60 p-stack-md italic">No chat history</p>';
+            return;
+        }
+
+        // Sort conversations by timestamp descending
+        const sortedConvs = [...conversations].sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+
+        sortedConvs.forEach(conv => {
+            const isActive = conv.id === currentConversationId;
+            const itemDiv = document.createElement('div');
+            itemDiv.className = `p-stack-md rounded-xl cursor-pointer group flex justify-between items-center transition-all ${isActive ? 'bg-surface-container-highest' : 'hover:bg-surface-variant'}`;
+            itemDiv.onclick = () => loadConversation(conv.id);
+
+            const contentDiv = document.createElement('div');
+            contentDiv.className = "flex-grow overflow-hidden pr-2";
+            
+            const titleP = document.createElement('p');
+            titleP.className = `font-label-sm text-label-sm line-clamp-1 ${isActive ? 'text-primary font-bold' : 'text-on-surface-variant'}`;
+            titleP.innerText = conv.title || "New Consultation";
+
+            const timeP = document.createElement('p');
+            timeP.className = "text-[10px] text-on-surface-variant/60 mt-1";
+            timeP.innerText = new Date(conv.timestamp).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+
+            contentDiv.appendChild(titleP);
+            contentDiv.appendChild(timeP);
+
+            const deleteBtn = document.createElement('button');
+            deleteBtn.className = "text-on-surface-variant/40 hover:text-error opacity-0 group-hover:opacity-100 transition-opacity p-1";
+            deleteBtn.innerHTML = '<span class="material-symbols-outlined text-sm">delete</span>';
+            deleteBtn.onclick = (e) => {
+                e.stopPropagation();
+                deleteConversation(conv.id);
+            };
+
+            itemDiv.appendChild(contentDiv);
+            itemDiv.appendChild(deleteBtn);
+            listContainer.appendChild(itemDiv);
+        });
+    }
+
+    function deleteConversation(id) {
+        conversations = conversations.filter(c => c.id !== id);
+        if (currentConversationId === id) {
+            currentConversationId = conversations.length > 0 ? conversations[0].id : null;
+        }
+        saveState();
+        renderHistoryList();
+        if (currentConversationId) {
+            loadConversation(currentConversationId);
+        } else {
+            showWelcomeMessage();
+        }
+    }
+
+    function loadConversation(id) {
+        currentConversationId = id;
+        saveState();
+        renderHistoryList();
+
+        const conv = conversations.find(c => c.id === id);
+        if (!conv) {
+            showWelcomeMessage();
+            return;
+        }
+
+        document.getElementById('initial-welcome-message').classList.add('hidden');
+        const activeContainer = document.getElementById('active-messages');
+        activeContainer.innerHTML = '';
+
+        conv.messages.forEach(msg => {
+            appendMessageToContainer(msg.role, msg.content, msg.warning);
+        });
+
+        const chatFeed = document.getElementById('chat-feed');
+        chatFeed.scrollTo({ top: chatFeed.scrollHeight, behavior: 'instant' });
+    }
+
+    function appendMessageToContainer(role, content, warning) {
+        const activeContainer = document.getElementById('active-messages');
+        const wrapper = document.createElement('div');
+        
+        if (role === 'user') {
+            wrapper.className = "flex justify-end gap-stack-md animate-chat";
+            wrapper.innerHTML = `
+                <div class="max-w-[85%] bg-primary-container text-white p-stack-md rounded-2xl rounded-tr-none">
+                    <p class="font-body-md text-body-md whitespace-pre-wrap">${escapeHTML(content)}</p>
+                </div>
+            `;
+        } else {
+            wrapper.className = "flex gap-stack-md animate-chat";
+            
+            let warningHtml = '';
+            if (warning) {
+                // Luminous clinical-style subtle inline warning block
+                warningHtml = `
+                    <div class="mt-stack-md p-stack-md bg-secondary-fixed/15 border border-secondary/15 rounded-xl flex items-start gap-2 text-xs text-on-secondary-fixed-variant">
+                        <span class="material-symbols-outlined text-sm mt-0.5 text-secondary">info</span>
+                        <div>
+                            <strong class="text-primary">Database Sync Note:</strong>
+                            <p class="mt-0.5">${escapeHTML(warning)}</p>
+                        </div>
+                    </div>
+                `;
+            }
+
+            wrapper.innerHTML = `
+                <div class="w-8 h-8 flex-shrink-0 bg-primary rounded-full flex items-center justify-center">
+                    <span class="material-symbols-outlined text-white text-lg">auto_awesome</span>
+                </div>
+                <div class="max-w-[85%]">
+                    <p class="font-body-md text-body-md text-on-surface whitespace-pre-wrap">${escapeHTML(content)}</p>
+                    ${warningHtml}
+                </div>
+            `;
+        }
+
+        activeContainer.appendChild(wrapper);
+    }
+
+    async function sendSuggestedPrompt(text) {
+        await sendMessage(text);
+    }
+
+    function handleSendClick() {
+        const textarea = document.getElementById('user-input');
+        const text = textarea.value.trim();
+        if (!text) return;
+        textarea.value = '';
+        textarea.style.height = 'auto';
+        sendMessage(text);
+    }
+
+    async function sendMessage(text) {
+        document.getElementById('initial-welcome-message').classList.add('hidden');
+        
+        // 1. Create new conversation if none is active
+        if (!currentConversationId) {
+            currentConversationId = 'conv_' + Date.now();
+            const title = text.length > 30 ? text.substring(0, 30) + '...' : text;
+            conversations.push({
+                id: currentConversationId,
+                title: title,
+                timestamp: new Date().toISOString(),
+                messages: []
+            });
+            renderHistoryList();
+        }
+
+        const conv = conversations.find(c => c.id === currentConversationId);
+        if (!conv) return;
+
+        // 2. Append User Message
+        const userMsg = { role: 'user', content: text };
+        conv.messages.push(userMsg);
+        appendMessageToContainer('user', text);
+        
+        const chatFeed = document.getElementById('chat-feed');
+        chatFeed.scrollTo({ top: chatFeed.scrollHeight, behavior: 'smooth' });
+        
+        // Show loading bubble
+        const loading = document.getElementById('loading-bubble');
+        loading.classList.remove('hidden');
+        chatFeed.scrollTo({ top: chatFeed.scrollHeight, behavior: 'smooth' });
+
+        // 3. Send to API
+        try {
+            // Prepare history payload for API (matching fastapi backend request schema)
+            const payloadMessages = conv.messages.map(m => ({
+                role: m.role,
+                content: m.content
+            }));
+
+            const response = await fetch('/api/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ messages: payloadMessages })
+            });
+
+            if (!response.ok) {
+                throw new Error('API communication error');
+            }
+
+            const result = await response.json();
+            
+            // 4. Save Assistant response
+            const aiMsg = { role: 'assistant', content: result.reply, warning: result.warning };
+            conv.messages.push(aiMsg);
+            
+            // Update timestamp
+            conv.timestamp = new Date().toISOString();
+
+            // Hide loading bubble and render message
+            loading.classList.add('hidden');
+            appendMessageToContainer('assistant', result.reply, result.warning);
+            chatFeed.scrollTo({ top: chatFeed.scrollHeight, behavior: 'smooth' });
+            
+            saveState();
+            renderHistoryList();
+        } catch (error) {
+            loading.classList.add('hidden');
+            appendMessageToContainer('assistant', 'Sorry, I encountered an error connecting to the skincare guidance service. Please ensure your local backend is running.');
+            chatFeed.scrollTo({ top: chatFeed.scrollHeight, behavior: 'smooth' });
+            console.error('Chat error:', error);
+        }
+    }
+
+    // Auto-resize textarea
+    const textarea = document.getElementById('user-input');
+    textarea.addEventListener('input', function() {
+        this.style.height = 'auto';
+        this.style.height = (this.scrollHeight) + 'px';
+    });
+
+    // Handle Enter key
+    textarea.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            handleSendClick();
+        }
+    });
+
+    function escapeHTML(str) {
+        return str
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+    }
+
+    // Initialize
+    window.addEventListener('DOMContentLoaded', init);
+</script>
+<script src="/static/ambient-blobs.js"></script>
+</body></html>

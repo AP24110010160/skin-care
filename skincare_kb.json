@@ -1,0 +1,259 @@
+{
+  "ingredients": {
+    "Niacinamide": {
+      "aliases": ["niacinamide", "vitamin b3"],
+      "does": "regulates oil production, strengthens the skin barrier, calms inflammation, fades post-acne marks",
+      "best_for": "oily, acne-prone, combination, sensitive skin",
+      "helps": ["acne", "enlarged pores", "redness", "dullness", "mild pigmentation"],
+      "side_effects": "rare mild flushing at high concentrations",
+      "when": "AM and/or PM",
+      "beginner_tip": "start with 5%, no patch test needed like with stronger actives",
+      "conflict_class": "gentle_universal"
+    },
+    "Salicylic Acid": {
+      "aliases": ["salicylic acid", "bha"],
+      "does": "oil-soluble exfoliant that penetrates pores to clear oil and dead skin buildup",
+      "best_for": "oily and acne-prone skin",
+      "helps": ["blackheads", "whiteheads", "congestion", "mild acne"],
+      "side_effects": "dryness or flaking if overused",
+      "when": "PM, 2-3x per week to start",
+      "beginner_tip": "start low frequency, always follow with moisturizer",
+      "conflict_class": "strong_exfoliant_night"
+    },
+    "Hyaluronic Acid": {
+      "aliases": ["hyaluronic acid", "ha", "sodium hyaluronate"],
+      "does": "humectant that draws water into the skin for hydration",
+      "best_for": "all skin types, including sensitive and dry",
+      "helps": ["dehydration", "plumpness", "fine lines from dryness"],
+      "side_effects": "none common; apply to damp skin and seal with moisturizer",
+      "when": "AM and PM",
+      "beginner_tip": "apply to damp skin, then seal with a moisturizer",
+      "conflict_class": "gentle_universal"
+    },
+    "Retinol": {
+      "aliases": ["retinol", "vitamin a"],
+      "does": "vitamin A derivative that speeds up cell turnover",
+      "best_for": "most skin types once introduced slowly",
+      "helps": ["fine lines", "acne", "texture", "dullness"],
+      "side_effects": "dryness, peeling, sun sensitivity when starting out",
+      "when": "PM only, always with SPF the next morning",
+      "beginner_tip": "start 2x per week, increase gradually over weeks",
+      "conflict_class": "strong_exfoliant_night"
+    },
+    "Ascorbic Acid": {
+      "aliases": ["ascorbic acid", "vitamin c", "l-ascorbic acid"],
+      "does": "antioxidant that brightens skin and protects against environmental damage",
+      "best_for": "normal, oily, combination skin; sensitive skin may need a gentler derivative",
+      "helps": ["dullness", "uneven tone", "mild pigmentation", "environmental protection"],
+      "side_effects": "can irritate sensitive skin at high strength",
+      "when": "AM, under sunscreen",
+      "beginner_tip": "start with a stable derivative like sodium ascorbyl phosphate",
+      "conflict_class": "ph_sensitive_am"
+    },
+    "Ceramide NP": {
+      "aliases": ["ceramide np", "ceramides", "ceramide"],
+      "does": "lipid that occurs naturally in skin and helps form the protective barrier",
+      "best_for": "dry, sensitive, and barrier-compromised skin",
+      "helps": ["dryness", "flaking", "irritation", "barrier repair"],
+      "side_effects": "essentially none",
+      "when": "AM and PM",
+      "beginner_tip": "safe to use daily from day one",
+      "conflict_class": "gentle_universal"
+    },
+    "Azelaic Acid": {
+      "aliases": ["azelaic acid"],
+      "does": "gentle multi-tasking acid, tolerated even by sensitive and rosacea-prone skin",
+      "best_for": "sensitive, acne-prone, redness-prone skin",
+      "helps": ["acne", "redness", "rosacea-related concerns", "post-acne dark marks"],
+      "side_effects": "mild tingling on application, usually temporary",
+      "when": "AM and/or PM",
+      "beginner_tip": "start daily at 10%, prescription strengths are higher and need a dermatologist",
+      "conflict_class": "gentle_universal"
+    },
+    "Glycolic Acid": {
+      "aliases": ["glycolic acid", "aha"],
+      "does": "AHA that exfoliates the skin's surface to improve texture and tone",
+      "best_for": "normal, oily, combination skin; go easy if sensitive",
+      "helps": ["dullness", "uneven texture", "mild pigmentation"],
+      "side_effects": "irritation, sun sensitivity, redness if overused",
+      "when": "PM, 2-3x per week to start",
+      "beginner_tip": "always pair with daily SPF",
+      "conflict_class": "strong_exfoliant_night"
+    },
+    "Alpha-Arbutin": {
+      "aliases": ["alpha-arbutin", "alpha arbutin", "arbutin"],
+      "does": "tyrosinase-inhibiting brightening agent that reduces melanin production",
+      "best_for": "most skin types, including sensitive skin",
+      "helps": ["hyperpigmentation", "dark spots", "uneven tone"],
+      "side_effects": "minimal; rare mild irritation",
+      "when": "AM and/or PM",
+      "beginner_tip": "~2% concentration, always pair with sunscreen",
+      "conflict_class": "gentle_universal"
+    },
+    "Centella Asiatica Leaf Extract": {
+      "aliases": ["centella asiatica", "cica", "centella"],
+      "does": "soothing, anti-inflammatory extract that supports barrier repair",
+      "best_for": "sensitive, irritated, barrier-compromised skin",
+      "helps": ["redness", "irritation", "barrier repair", "post-procedure calming"],
+      "side_effects": "essentially none",
+      "when": "AM and/or PM",
+      "beginner_tip": "safe daily from day one",
+      "conflict_class": "gentle_universal"
+    },
+    "Squalane": {
+      "aliases": ["squalane"],
+      "does": "lightweight emollient that mimics skin's natural lipids to lock in moisture",
+      "best_for": "all skin types, including oily (non-comedogenic)",
+      "helps": ["dryness", "dehydration", "barrier support"],
+      "side_effects": "none common",
+      "when": "AM and/or PM, often as a last step",
+      "beginner_tip": "good starter moisturizing ingredient",
+      "conflict_class": "gentle_universal"
+    },
+    "Zinc PCA": {
+      "aliases": ["zinc pca", "zinc"],
+      "does": "helps regulate oil production, mild antibacterial properties",
+      "best_for": "oily and acne-prone skin",
+      "helps": ["excess oil", "mild acne support"],
+      "side_effects": "minimal",
+      "when": "AM and/or PM",
+      "beginner_tip": "pairs well with niacinamide for oil control",
+      "conflict_class": "gentle_universal"
+    },
+    "Panthenol": {
+      "aliases": ["panthenol", "pro-vitamin b5", "provitamin b5"],
+      "does": "humectant and soothing agent that supports hydration and barrier repair",
+      "best_for": "all skin types, especially dry or irritated",
+      "helps": ["dryness", "irritation", "barrier support"],
+      "side_effects": "minimal, very well tolerated",
+      "when": "AM and/or PM",
+      "beginner_tip": "very safe, no patch test typically needed",
+      "conflict_class": "gentle_universal"
+    },
+    "Lactic Acid": {
+      "aliases": ["lactic acid"],
+      "does": "gentler AHA that exfoliates and also has humectant properties",
+      "best_for": "normal to dry skin, or sensitive skin wanting gentle exfoliation",
+      "helps": ["texture", "dullness", "mild pigmentation"],
+      "side_effects": "irritation or sun sensitivity if overused",
+      "when": "PM, 2-3x per week to start",
+      "beginner_tip": "always pair with daily SPF",
+      "conflict_class": "strong_exfoliant_night"
+    },
+    "Tranexamic Acid": {
+      "aliases": ["tranexamic acid"],
+      "does": "brightening ingredient that reduces melanin production",
+      "best_for": "most skin types",
+      "helps": ["stubborn pigmentation", "melasma-like discoloration", "post-inflammatory marks"],
+      "side_effects": "minimal when used topically",
+      "when": "AM and/or PM",
+      "beginner_tip": "pairs well with niacinamide and vitamin C",
+      "conflict_class": "gentle_universal"
+    },
+    "Bakuchiol": {
+      "aliases": ["bakuchiol"],
+      "does": "plant-derived retinol alternative, similar cell-turnover benefits with less irritation",
+      "best_for": "sensitive skin or those who can't tolerate retinol",
+      "helps": ["fine lines", "texture", "mild acne"],
+      "side_effects": "minimal, occasional mild irritation",
+      "when": "AM or PM",
+      "beginner_tip": "gentler starting point than retinol, still worth patch testing",
+      "conflict_class": "strong_exfoliant_night"
+    },
+    "Peptide": {
+      "aliases": ["peptide", "peptides"],
+      "does": "signal proteins that support collagen production and skin repair",
+      "best_for": "most skin types, especially aging-prone skin",
+      "helps": ["fine lines", "firmness", "skin barrier support"],
+      "side_effects": "essentially none",
+      "when": "AM and/or PM",
+      "beginner_tip": "safe daily, pairs well with most other actives",
+      "conflict_class": "gentle_universal"
+    },
+    "Tocopherol": {
+      "aliases": ["tocopherol", "vitamin e"],
+      "does": "antioxidant that protects skin from environmental damage and supports moisture barrier",
+      "best_for": "most skin types",
+      "helps": ["environmental protection", "dryness-prone skin support"],
+      "side_effects": "rare; can be comedogenic in oil-based formulas for very acne-prone skin",
+      "when": "AM and/or PM",
+      "beginner_tip": "usually already combined into other products like vitamin C serums",
+      "conflict_class": "gentle_universal"
+    },
+    "Ferulic Acid": {
+      "aliases": ["ferulic acid"],
+      "does": "antioxidant that stabilizes and boosts the effectiveness of vitamin C",
+      "best_for": "most skin types",
+      "helps": ["environmental protection", "enhancing antioxidant serums"],
+      "side_effects": "minimal",
+      "when": "AM, ideally under sunscreen",
+      "beginner_tip": "usually already combined into vitamin C serums",
+      "conflict_class": "gentle_universal"
+    },
+    "Allantoin": {
+      "aliases": ["allantoin"],
+      "does": "soothing, skin-conditioning ingredient that supports healing and hydration",
+      "best_for": "all skin types, especially sensitive or irritated skin",
+      "helps": ["irritation", "dryness", "soothing after actives"],
+      "side_effects": "essentially none",
+      "when": "AM and/or PM",
+      "beginner_tip": "often paired with stronger actives to offset irritation",
+      "conflict_class": "gentle_universal"
+    },
+    "Camellia Sinensis Leaf Extract": {
+      "aliases": ["camellia sinensis", "green tea extract", "green tea"],
+      "does": "antioxidant with mild anti-inflammatory properties",
+      "best_for": "most skin types, including oily and acne-prone",
+      "helps": ["environmental protection", "mild redness/irritation calming"],
+      "side_effects": "minimal",
+      "when": "AM and/or PM",
+      "beginner_tip": "safe for daily use",
+      "conflict_class": "gentle_universal"
+    },
+    "Adenosine": {
+      "aliases": ["adenosine"],
+      "does": "soothing ingredient with mild anti-wrinkle signaling properties",
+      "best_for": "most skin types, popular in mature/anti-aging formulas",
+      "helps": ["fine lines", "calming", "texture"],
+      "side_effects": "minimal",
+      "when": "AM and/or PM",
+      "beginner_tip": "safe for daily use",
+      "conflict_class": "gentle_universal"
+    },
+    "Beta-Glucan": {
+      "aliases": ["beta-glucan", "beta glucan"],
+      "does": "soothing, hydrating polysaccharide that supports barrier repair",
+      "best_for": "sensitive, irritated, barrier-compromised skin",
+      "helps": ["irritation", "hydration", "redness"],
+      "side_effects": "essentially none",
+      "when": "AM and/or PM",
+      "beginner_tip": "very safe daily use",
+      "conflict_class": "gentle_universal"
+    }
+  },
+
+  "conflict_classes": {
+    "gentle_universal": "No known conflicts with other actives. Safe to combine freely.",
+    "strong_exfoliant_night": "Increases cell turnover / sensitivity. Avoid stacking with other members of this class on the same night; alternate nights instead.",
+    "ph_sensitive_am": "Works best in a low-pH, AM context. Best kept separate from PM strong-exfoliant actives; layering same-step with those can reduce efficacy or increase irritation."
+  },
+
+  "explicit_pairs": [
+    {"pair": ["Retinol", "Ascorbic Acid"], "relationship": "sequential", "note": "Use vitamin C in the AM and retinol at night rather than layering together."},
+    {"pair": ["Retinol", "Salicylic Acid"], "relationship": "alternate_nights", "note": "Both increase sensitivity; alternate nights rather than combining."},
+    {"pair": ["Retinol", "Glycolic Acid"], "relationship": "alternate_nights", "note": "Both increase cell turnover; alternate nights rather than combining."},
+    {"pair": ["Retinol", "Lactic Acid"], "relationship": "alternate_nights", "note": "Both increase cell turnover; alternate nights rather than combining."},
+    {"pair": ["Retinol", "Azelaic Acid"], "relationship": "safe_together", "note": "Azelaic acid is gentle enough to typically pair with retinol once each is individually tolerated."},
+    {"pair": ["Retinol", "Bakuchiol"], "relationship": "redundant", "note": "Both serve a similar purpose; there's usually no need to use both at once."},
+    {"pair": ["Retinol", "Tranexamic Acid"], "relationship": "sequential", "note": "Commonly combined for pigmentation; AM tranexamic acid, PM retinol is a common approach for beginners."},
+    {"pair": ["Glycolic Acid", "Salicylic Acid"], "relationship": "alternate_nights", "note": "Both are exfoliants; combining raises over-exfoliation risk."},
+    {"pair": ["Glycolic Acid", "Lactic Acid"], "relationship": "redundant", "note": "Both are AHAs serving a similar purpose; usually no need to use both the same night."},
+    {"pair": ["Glycolic Acid", "Ascorbic Acid"], "relationship": "caution_sequential", "note": "Both can lower skin pH; a gentler approach is vitamin C AM, glycolic acid PM on alternate nights."},
+    {"pair": ["Niacinamide", "Ascorbic Acid"], "relationship": "safe_together", "note": "Modern stable vitamin C formulations pair fine with niacinamide for most people."},
+    {"pair": ["Niacinamide", "Salicylic Acid"], "relationship": "safe_together", "note": "Common, well-tolerated pairing for oily/acne-prone skin."},
+    {"pair": ["Tranexamic Acid", "Ascorbic Acid"], "relationship": "safe_together", "note": "Commonly combined for pigmentation concerns."},
+    {"pair": ["Lactic Acid", "Hyaluronic Acid"], "relationship": "safe_together", "note": "Hyaluronic acid helps offset dryness from exfoliation."},
+    {"pair": ["Beta-Glucan", "Centella Asiatica Leaf Extract"], "relationship": "safe_together", "note": "Both soothing, barrier-supporting ingredients with no conflicts."},
+    {"pair": ["Adenosine", "Peptide"], "relationship": "safe_together", "note": "Commonly paired in anti-aging formulas."}
+  ]
+}

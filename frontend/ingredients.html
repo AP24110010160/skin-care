@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ingredient Knowledge Hub | SkinSense AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Config Verbatim -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e2e2e4",
+                    "on-secondary-fixed": "#002107",
+                    "primary-container": "#1d1d1f",
+                    "outline": "#77767b",
+                    "surface-container": "#eeeef0",
+                    "error-container": "#ffdad6",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-container": "#868587",
+                    "surface-bright": "#f9f9fb",
+                    "primary-fixed": "#e4e2e4",
+                    "secondary-container": "#abf4ac",
+                    "on-surface": "#1a1c1d",
+                    "surface-tint": "#5f5e60",
+                    "on-surface-variant": "#46464a",
+                    "on-tertiary-container": "#4f8ab6",
+                    "secondary-fixed": "#abf4ac",
+                    "on-background": "#1a1c1d",
+                    "on-error": "#ffffff",
+                    "surface": "#f9f9fb",
+                    "on-secondary-fixed-variant": "#07521d",
+                    "tertiary-container": "#001f32",
+                    "tertiary-fixed-dim": "#93cdfc",
+                    "inverse-surface": "#2f3132",
+                    "primary-fixed-dim": "#c8c6c8",
+                    "tertiary": "#000307",
+                    "background": "#f9f9fb",
+                    "secondary": "#286b33",
+                    "on-tertiary-fixed-variant": "#004b71",
+                    "surface-container-highest": "#e2e2e4",
+                    "on-primary-fixed": "#1b1b1d",
+                    "outline-variant": "#c7c6ca",
+                    "surface-container-low": "#f3f3f5",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed-variant": "#474649",
+                    "surface-dim": "#d9dadc",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed": "#001e30",
+                    "on-secondary-container": "#2e7238",
+                    "tertiary-fixed": "#cbe6ff",
+                    "on-secondary": "#ffffff",
+                    "primary": "#030304",
+                    "inverse-primary": "#c8c6c8",
+                    "surface-container-high": "#e8e8ea",
+                    "secondary-fixed-dim": "#90d792",
+                    "inverse-on-surface": "#f0f0f2",
+                    "error": "#ba1a1a",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "4px",
+                    "stack-lg": "32px",
+                    "margin-mobile": "20px",
+                    "gutter": "24px",
+                    "container-max": "1200px",
+                    "margin-desktop": "40px",
+                    "stack-sm": "8px",
+                    "stack-md": "16px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "title-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "display-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["15px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-sm": ["13px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "title-md": ["20px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "body-lg": ["17px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #f9f9fb;
+            color: #1a1c1d;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(245, 245, 247, 1);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #e2e2e4;
+            border-radius: 10px;
+        }
+    </style>
+<link rel="stylesheet" href="/static/ambient-blobs.css">
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script src="/static/auth.js" defer></script>
+</head>
+<body class="bg-background min-h-screen">
+<div class="ambient-blobs" aria-hidden="true">
+  <div class="blob-parallax" data-speed="0.15"><div class="blob blob-1"></div></div>
+  <div class="blob-parallax" data-speed="-0.1"><div class="blob blob-2"></div></div>
+  <div class="blob-parallax" data-speed="0.22"><div class="blob blob-3"></div></div>
+</div>
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30">
+<nav class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-stack-sm max-w-container-max mx-auto h-16">
+<div class="font-headline-lg-mobile md:font-headline-lg text-primary tracking-tight font-bold">SkinSense AI</div>
+<div class="hidden md:flex items-center gap-gutter">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="/">Home</a>
+<a class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary pb-1" href="/ingredients">Ingredients</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="/chat">AI Analysis</a>
+</div>
+<div class="flex items-center gap-4">
+  <!-- Google Login Button Container -->
+  <div id="google-signin-container" class="flex items-center">
+    <div id="g_id_onload"
+         data-client_id="168000080775-2aohtfi9hrk6v0naq27uj94rrnhpbpcb.apps.googleusercontent.com"
+         data-context="signin"
+         data-ux_mode="popup"
+         data-callback="handleCredentialResponse"
+         data-auto_prompt="false">
+    </div>
+    <div class="g_id_signin"
+         data-type="standard"
+         data-shape="pill"
+         data-theme="outline"
+         data-text="signin_with"
+         data-size="medium"
+         data-logo_alignment="left">
+    </div>
+  </div>
+
+  <!-- User Profile Container (Hidden by default) -->
+  <div id="user-profile-container" class="hidden flex items-center gap-3">
+    <img id="user-avatar" src="" alt="Avatar" class="w-8 h-8 rounded-full border border-outline-variant/30">
+    <span id="user-name" class="hidden sm:inline font-body-md text-primary font-medium"></span>
+    <button onclick="handleLogout()" class="text-xs text-on-surface-variant hover:text-error transition-colors px-2 py-1 bg-surface-container rounded-md">
+      Logout
+    </button>
+  </div>
+  <span class="text-xs text-on-surface-variant/60 font-label-sm uppercase tracking-wider bg-surface-container px-3 py-1.5 rounded-full">v1 Local</span>
+</div>
+</nav>
+</header>
+<main class="pt-24 pb-stack-lg max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative">
+<!-- Search & Discovery Section -->
+<section class="mb-stack-lg">
+<div class="flex flex-col gap-stack-md">
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight mb-stack-sm">Ingredient Knowledge Hub</h1>
+<div class="relative w-full max-w-2xl">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input id="search-input" class="w-full pl-12 pr-4 py-4 bg-surface-container-low rounded-xl border-none focus:ring-1 focus:ring-primary font-body-md text-body-md" placeholder="Search an ingredient..." type="text" autocomplete="off"/>
+<!-- Autocomplete Dropdown -->
+<div id="search-results" class="absolute left-0 right-0 mt-2 bg-surface-container-lowest border border-outline-variant/30 rounded-xl shadow-lg max-h-60 overflow-y-auto z-50 hidden"></div>
+</div>
+<div class="flex flex-wrap gap-stack-sm items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Popular:</span>
+<button onclick="selectIngredient('Niacinamide')" class="px-4 py-1.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm transition-transform active:scale-95">Niacinamide</button>
+<button onclick="selectIngredient('Ascorbic Acid')" class="px-4 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-variant transition-colors">Vitamin C</button>
+<button onclick="selectIngredient('Retinol')" class="px-4 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-variant transition-colors">Retinol</button>
+<button onclick="selectIngredient('Hyaluronic Acid')" class="px-4 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-variant transition-colors">Hyaluronic Acid</button>
+<button onclick="selectIngredient('Salicylic Acid')" class="px-4 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-variant transition-colors">Salicylic Acid</button>
+</div>
+</div>
+</section>
+<!-- Main Ingredient Content: Bento Grid Style -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Hero Ingredient Card -->
+<div class="lg:col-span-8 space-y-gutter">
+<div class="glass-card rounded-[24px] p-stack-lg shadow-sm border border-outline-variant/20">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-stack-lg gap-stack-md">
+<div>
+<span id="ingredient-badge" class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-label-sm font-label-sm mb-stack-sm inline-block">Vitamin B3 derivative</span>
+<h2 id="ingredient-title" class="font-display-lg text-display-lg text-primary">Niacinamide</h2>
+</div>
+<div class="flex gap-stack-sm">
+<button class="p-3 rounded-full bg-surface-container-low text-on-surface hover:bg-surface-variant transition-colors" title="Save to favorites">
+<span class="material-symbols-outlined" data-weight="fill">bookmark</span>
+</button>
+<button class="p-3 rounded-full bg-surface-container-low text-on-surface hover:bg-surface-variant transition-colors" title="Share">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</div>
+<p id="ingredient-description" class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg leading-relaxed max-w-3xl">
+                        Niacinamide is a water-soluble vitamin that works with the natural substances in your skin to help visibly improve enlarged pores, uneven skin tone, fine lines and wrinkles, dullness, and a weakened surface.
+                    </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg">
+<div class="space-y-stack-sm">
+<h4 class="font-title-md text-title-md text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">verified</span> How it works
+                            </h4>
+<p id="how-it-works" class="font-body-md text-body-md text-on-surface-variant">
+                                It helps build cells in the skin while also protecting them from environmental stresses, such as sunlight, pollution, and toxins. It acts as a precursor to essential coenzymes for many cellular metabolic enzymic reactions.
+                            </p>
+</div>
+<div class="space-y-stack-sm">
+<h4 class="font-title-md text-title-md text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">spa</span> Benefits
+                            </h4>
+<ul id="helps-list" class="font-body-md text-body-md text-on-surface-variant space-y-1 list-disc list-inside">
+<li>Minimizes pore appearance</li>
+<li>Regulates oil production</li>
+<li>Treats hyperpigmentation</li>
+<li>Protects against oxidative stress</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Secondary Info Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Usage Guide -->
+<div class="glass-card rounded-[20px] p-stack-md flex flex-col justify-between h-full">
+<div>
+<h4 class="font-label-sm text-label-sm text-outline uppercase tracking-wider mb-stack-sm">Usage Window</h4>
+<div id="usage-window">
+<div class="flex items-center gap-2 text-primary font-title-md text-title-md">
+<span class="material-symbols-outlined">light_mode</span>
+<span class="material-symbols-outlined">dark_mode</span>
+<span>AM &amp; PM</span>
+</div>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-stack-md">Safe for twice-daily application.</p>
+</div>
+<!-- Skin Types -->
+<div id="skin-match" class="glass-card rounded-[20px] p-stack-md bg-secondary/5 border-secondary/10">
+<h4 class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-stack-sm">Skin Match</h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-white rounded-lg text-label-sm font-label-sm text-secondary">All Types</span>
+<span class="px-2 py-1 bg-white rounded-lg text-label-sm font-label-sm text-secondary">Oily</span>
+<span class="px-2 py-1 bg-white rounded-lg text-label-sm font-label-sm text-secondary">Acne-Prone</span>
+</div>
+<p class="font-body-md text-body-md text-on-secondary-fixed-variant mt-stack-md">Universally well-tolerated.</p>
+</div>
+<!-- Frequency -->
+<div id="frequency-container" class="glass-card rounded-[20px] p-stack-md">
+<h4 class="font-label-sm text-label-sm text-outline uppercase tracking-wider mb-stack-sm">Frequency</h4>
+<div class="text-primary font-title-md text-title-md mb-2">Daily</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Recommended for consistent daily use to see results in 4-8 weeks.</p>
+</div>
+</div>
+<!-- Deep Dive Content -->
+<div class="glass-card rounded-[24px] overflow-hidden">
+<div class="p-stack-lg border-b border-outline-variant/20">
+<h3 class="font-headline-lg text-headline-lg text-primary mb-stack-md">Detailed Guide</h3>
+<div class="space-y-stack-lg">
+<article>
+<h4 class="font-title-md text-title-md text-primary mb-2">Beginner's Protocol</h4>
+<p id="beginner-protocol" class="font-body-md text-body-md text-on-surface-variant">Start with a 5% concentration if you have sensitive skin. While 10% is popular, clinical studies show 5% is highly effective for most concerns without irritation risk.</p>
+</article>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg">
+<div class="bg-surface-container rounded-xl p-stack-md">
+<h4 class="font-label-sm text-label-sm text-on-secondary-container flex items-center gap-2 mb-stack-sm">
+<span class="material-symbols-outlined text-[18px]">add_circle</span> BEST WITH
+                                    </h4>
+<ul id="best-with-list" class="font-body-md text-body-md text-on-surface-variant space-y-1">
+<li><strong>Hyaluronic Acid:</strong> Boosts hydration</li>
+<li><strong>Retinol:</strong> Mitigates irritation</li>
+<li><strong>Zinc:</strong> Superior oil control</li>
+</ul>
+</div>
+<div id="avoid-mixing-container" class="bg-error-container/30 rounded-xl p-stack-md">
+<h4 class="font-label-sm text-label-sm text-error flex items-center gap-2 mb-stack-sm">
+<span class="material-symbols-outlined text-[18px]">block</span> AVOID MIXING
+                                    </h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                        Avoid mixing in the same step with <strong>L-Ascorbic Acid (Pure Vit C)</strong> if it causes flushing, though modern stabilized versions are usually fine.
+                                    </p>
+</div>
+</div>
+</div>
+</div>
+<div class="p-stack-lg bg-surface-container-low">
+<div class="flex items-start gap-stack-md">
+<span class="material-symbols-outlined text-error mt-1">warning</span>
+<div>
+<h4 class="font-title-md text-title-md text-primary mb-1">Safety Notes &amp; Side Effects</h4>
+<p id="safety-notes" class="font-body-md text-body-md text-on-surface-variant">Rare but possible: mild redness or "niacin flushing" when used with highly acidic products. Always patch test on the forearm for 24 hours before facial application.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar: Recommendations & Related -->
+<aside class="lg:col-span-4 space-y-gutter">
+<div class="sticky top-24">
+<h3 class="font-title-md text-title-md text-primary mb-stack-md">Related Ingredients</h3>
+<div id="related-ingredients" class="space-y-stack-md">
+<!-- Dynamic related ingredients populate here -->
+</div>
+<!-- Newsletter/Guide CTA -->
+<div class="mt-stack-lg rounded-[20px] overflow-hidden relative">
+<div class="absolute inset-0 bg-primary-container"></div>
+<div class="relative p-stack-lg z-10">
+<h4 class="font-title-md text-title-md text-on-primary font-bold mb-2">Need a personalized routine?</h4>
+<p class="font-body-md text-body-md text-on-primary-container mb-stack-md">Our AI analysis can scan your current products and suggest the perfect ingredient additions.</p>
+<a href="/chat" class="block w-full text-center bg-white text-primary py-3 rounded-lg font-label-sm text-label-sm font-bold hover:bg-surface-container-high transition-colors">Start AI Analysis</a>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-stack-lg mt-stack-lg bg-surface-container-low border-t border-outline-variant/10 relative">
+<div class="flex flex-col md:flex-row justify-between items-start gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="space-y-stack-sm max-w-xs">
+<div class="font-title-md text-title-md font-bold text-primary">SkinSense AI</div>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 SkinSense AI. Precision Skincare through Science. Empowering users with clinical-grade ingredient transparency.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-2 gap-12">
+<div class="flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-primary font-bold mb-2">Resources</span>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary" href="/">Home</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary" href="/ingredients">Ingredient Dictionary</a>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-primary font-bold mb-2">Legal</span>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- FAB for AI Chat (repointed from Scan) -->
+<a href="/chat" class="fixed bottom-8 right-8 bg-primary text-on-primary p-4 rounded-full shadow-lg hover:scale-105 transition-transform flex items-center gap-2 z-50">
+<span class="material-symbols-outlined">chat</span>
+<span class="font-label-sm text-label-sm hidden md:inline">Ask AI Routine</span>
+</a>
+<script>
+        let allIngredients = [];
+
+        // Fetch list of all ingredients on load
+        async function loadIngredients() {
+            try {
+                const response = await fetch('/api/ingredients');
+                allIngredients = await response.json();
+                
+                // Select Niacinamide as default initial load
+                selectIngredient('Niacinamide');
+            } catch (error) {
+                console.error('Error loading ingredients list:', error);
+            }
+        }
+
+        // Fetch detailed data for a specific ingredient
+        async function selectIngredient(name) {
+            try {
+                // Clear autocomplete results
+                const resultsContainer = document.getElementById('search-results');
+                resultsContainer.innerHTML = '';
+                resultsContainer.classList.add('hidden');
+                document.getElementById('search-input').value = '';
+
+                // Get details
+                const response = await fetch(`/api/ingredients/${encodeURIComponent(name)}`);
+                if (!response.ok) throw new Error('Ingredient not found');
+                const data = await response.json();
+                
+                // Update active state of Popular chips (only visual decoration helper)
+                document.querySelectorAll('button').forEach(btn => {
+                    if (btn.innerText.trim().toLowerCase() === name.toLowerCase() || 
+                        (name.toLowerCase() === 'ascorbic acid' && btn.innerText.trim().toLowerCase() === 'vitamin c')) {
+                        btn.className = "px-4 py-1.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm transition-transform active:scale-95";
+                    } else if (btn.innerText.match(/Niacinamide|Vitamin C|Retinol|Hyaluronic Acid|Salicylic Acid/)) {
+                        btn.className = "px-4 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-variant transition-colors";
+                    }
+                });
+
+                renderIngredient(data);
+            } catch (error) {
+                console.error('Error selecting ingredient:', error);
+            }
+        }
+
+        // Render the ingredient data into the DOM templates
+        function renderIngredient(data) {
+            // Category Badge
+            const badge = document.getElementById('ingredient-badge');
+            if (data.conflict_class) {
+                badge.innerText = data.conflict_class.replace(/_/g, ' ').toUpperCase();
+                badge.className = "px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-label-sm font-label-sm mb-stack-sm inline-block";
+            } else {
+                badge.innerText = "INGREDIENT";
+                badge.className = "px-3 py-1 bg-surface-container text-on-surface-variant rounded-full text-label-sm font-label-sm mb-stack-sm inline-block";
+            }
+
+            // Title, Description, How it works
+            document.getElementById('ingredient-title').innerText = data.name;
+            document.getElementById('ingredient-description').innerText = data.does;
+            document.getElementById('how-it-works').innerText = `Acts as a key active in skincare to target: ${data.does}. ${data.beginner_tip}`;
+
+            // Benefits list (helps)
+            const helpsList = document.getElementById('helps-list');
+            helpsList.innerHTML = data.helps.map(h => `<li class="capitalize">${h}</li>`).join('');
+
+            // Usage Window
+            const usageWindow = document.getElementById('usage-window');
+            let iconsHtml = '';
+            const whenLower = data.when.toLowerCase();
+            if (whenLower.includes('am')) {
+                iconsHtml += '<span class="material-symbols-outlined">light_mode</span> ';
+            }
+            if (whenLower.includes('pm')) {
+                iconsHtml += '<span class="material-symbols-outlined">dark_mode</span> ';
+            }
+            usageWindow.innerHTML = `
+                <div class="flex items-center gap-2 text-primary font-title-md text-title-md">
+                    ${iconsHtml}
+                    <span>${data.when}</span>
+                </div>
+            `;
+
+            // Skin Match
+            const skinMatch = document.getElementById('skin-match');
+            const types = data.best_for.split(',').map(s => s.trim());
+            skinMatch.innerHTML = `
+                <h4 class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-stack-sm">Skin Match</h4>
+                <div class="flex flex-wrap gap-2">
+                    ${types.map(t => `<span class="px-2 py-1 bg-white rounded-lg text-label-sm font-label-sm text-secondary capitalize">${t}</span>`).join('')}
+                </div>
+                <p class="font-body-md text-body-md text-on-secondary-fixed-variant mt-stack-md">Tailored for these skin profiles.</p>
+            `;
+
+            // Frequency
+            const frequency = document.getElementById('frequency-container');
+            let freqVal = 'Daily';
+            if (whenLower.includes('2-3x') || whenLower.includes('week')) {
+                freqVal = '2-3x / week';
+            } else if (whenLower.includes('pm only')) {
+                freqVal = 'Nightly';
+            }
+            frequency.innerHTML = `
+                <h4 class="font-label-sm text-label-sm text-outline uppercase tracking-wider mb-stack-sm">Frequency</h4>
+                <div class="text-primary font-title-md text-title-md mb-2">${freqVal}</div>
+                <p class="font-body-md text-body-md text-on-surface-variant">Consistent usage is recommended for optimal efficacy.</p>
+            `;
+
+            // Beginner Protocol
+            document.getElementById('beginner-protocol').innerText = data.beginner_tip;
+
+            // Best With List
+            const bestWithList = document.getElementById('best-with-list');
+            if (data.best_with.length > 0) {
+                bestWithList.innerHTML = data.best_with.map(item => `
+                    <li class="cursor-pointer hover:underline" onclick="selectIngredient('${item.name}')">
+                        <strong class="text-secondary">${item.name}:</strong> ${item.note}
+                    </li>
+                `).join('');
+            } else {
+                bestWithList.innerHTML = `<li>No specific pairing synergy listed. Generally safe to use with most products.</li>`;
+            }
+
+            // Avoid Mixing Card (with fallback check)
+            const avoidMixingContainer = document.getElementById('avoid-mixing-container');
+            if (data.avoid_mixing.length > 0) {
+                avoidMixingContainer.className = "bg-error-container/30 rounded-xl p-stack-md border border-error/10";
+                avoidMixingContainer.innerHTML = `
+                    <h4 class="font-label-sm text-label-sm text-error flex items-center gap-2 mb-stack-sm">
+                        <span class="material-symbols-outlined text-[18px]">block</span> AVOID MIXING
+                    </h4>
+                    <ul class="font-body-md text-body-md text-on-surface-variant space-y-2">
+                        ${data.avoid_mixing.map(item => `
+                            <li class="cursor-pointer hover:underline" onclick="selectIngredient('${item.name}')">
+                                <strong>${item.name}:</strong> ${item.note}
+                            </li>
+                        `).join('')}
+                    </ul>
+                `;
+            } else {
+                avoidMixingContainer.className = "bg-secondary/5 rounded-xl p-stack-md border border-secondary/15";
+                avoidMixingContainer.innerHTML = `
+                    <h4 class="font-label-sm text-label-sm text-secondary flex items-center gap-2 mb-stack-sm">
+                        <span class="material-symbols-outlined text-[18px]">check_circle</span> SAFE COMBO
+                    </h4>
+                    <p class="font-body-md text-body-md text-on-surface-variant italic">
+                        No known conflicts on file for this ingredient. Safe to combine freely.
+                    </p>
+                `;
+            }
+
+            // Safety Notes & Side Effects
+            document.getElementById('safety-notes').innerText = data.side_effects;
+
+            // Related Ingredients sidebar
+            const relatedList = document.getElementById('related-ingredients');
+            relatedList.innerHTML = data.related_ingredients.map(item => `
+                <div class="group glass-card rounded-xl p-stack-md hover:border-primary transition-all cursor-pointer" onclick="selectIngredient('${item.name}')">
+                    <div class="flex justify-between items-start mb-2">
+                        <h5 class="font-title-md text-title-md text-primary group-hover:text-primary transition-colors">${item.name}</h5>
+                        <span class="material-symbols-outlined text-outline group-hover:text-primary">arrow_forward</span>
+                    </div>
+                    <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">${item.does}</p>
+                    <div class="mt-stack-md flex gap-2">
+                        <span class="text-[11px] font-label-sm px-2 py-0.5 bg-surface-variant text-primary rounded uppercase tracking-tighter">${item.when}</span>
+                        <span class="text-[11px] font-label-sm px-2 py-0.5 bg-surface-variant text-primary rounded uppercase tracking-tighter">${item.conflict_class.replace(/_/g, ' ')}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Search Input filter autocomplete dropdown
+        const searchInput = document.getElementById('search-input');
+        const resultsContainer = document.getElementById('search-results');
+
+        searchInput.addEventListener('input', () => {
+            const query = searchInput.value.toLowerCase().trim();
+            if (!query) {
+                resultsContainer.innerHTML = '';
+                resultsContainer.classList.add('hidden');
+                return;
+            }
+
+            const matches = allIngredients.filter(ing => {
+                const nameMatch = ing.name.toLowerCase().includes(query);
+                const aliasMatch = ing.aliases.some(alias => alias.toLowerCase().includes(query));
+                return nameMatch || aliasMatch;
+            });
+
+            if (matches.length === 0) {
+                resultsContainer.innerHTML = '<div class="p-3 text-on-surface-variant text-sm">No ingredients found</div>';
+            } else {
+                resultsContainer.innerHTML = matches.map(ing => `
+                    <div class="p-3 hover:bg-surface-container cursor-pointer text-sm text-primary font-medium border-b border-outline-variant/10 last:border-0" onclick="selectIngredient('${ing.name}')">
+                        ${ing.name} <span class="text-xs text-on-surface-variant font-normal">(${ing.does.slice(0, 45)}...)</span>
+                    </div>
+                `).join('');
+            }
+            resultsContainer.classList.remove('hidden');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!searchInput.contains(e.target) && !resultsContainer.contains(e.target)) {
+                resultsContainer.classList.add('hidden');
+            }
+        });
+
+        // Initialize on load
+        window.addEventListener('DOMContentLoaded', loadIngredients);
+    </script>
+    <script src="/static/ambient-blobs.js"></script>
+</body></html>

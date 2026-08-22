@@ -1,0 +1,30 @@
+# Byte-compiled / python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Model weights and datasets (Exceed Git 100MB file limit)
+skincare-model*
+adapters*
+data/*.jsonl
+*.safetensors
+
+# Temporary batch files & utility scripts
+handwritten_batch*.jsonl
+kaggle_generated_*.jsonl
+check_jsonl.py
+clean_jsonl.py
+
+# Virtual environments
+venv/
+.venv/
+env/
+skincare-llm-env/
+
+# Environment variables & secrets
+.env
+.env.local
+
+# OS Metadata
+.DS_Store
+Thumbs.db
