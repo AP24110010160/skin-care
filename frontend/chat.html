@@ -166,8 +166,10 @@
     <button onclick="handleLogout()" class="text-xs text-on-surface-variant hover:text-error transition-colors px-2 py-1 bg-surface-container rounded-md">
       Logout
     </button>
-  </div>
-  <span class="text-xs text-on-surface-variant/60 font-label-sm uppercase tracking-wider bg-surface-container px-3 py-1.5 rounded-full">v1 Local</span>
+  <button onclick="startNewChat()" class="flex items-center gap-1 text-xs font-medium text-primary hover:bg-surface-variant transition-colors px-3 py-1.5 bg-surface-container border border-outline-variant/30 rounded-full">
+    <span class="material-symbols-outlined text-sm">add</span> New Chat
+  </button>
+  <span class="text-xs text-on-surface-variant/60 font-label-sm uppercase tracking-wider bg-surface-container px-3 py-1.5 rounded-full">SkinSense AI v6</span>
 </div>
 </div>
 </nav>
@@ -286,9 +288,12 @@
     }
 
     function showWelcomeMessage() {
-        document.getElementById('initial-welcome-message').classList.remove('hidden');
-        document.getElementById('active-messages').innerHTML = '';
+        const welcomeEl = document.getElementById('initial-welcome-message');
+        if (welcomeEl) welcomeEl.classList.remove('hidden');
+        const activeMsgs = document.getElementById('active-messages');
+        if (activeMsgs) activeMsgs.innerHTML = '';
         currentConversationId = null;
+        localStorage.removeItem('skinsense_current_id');
         saveState();
         renderHistoryList();
     }
