@@ -171,6 +171,19 @@ def chat_endpoint(payload: ChatRequest):
         response.raise_for_status()
         resp_json = response.json()
         reply = resp_json["choices"][0]["message"]["content"]
+        
+        # Deduplicate any repetitive disclaimer lines from model generation
+        lines = reply.split("\n")
+        cleaned_lines = []
+        seen = set()
+        for line in lines:
+            stripped = line.strip()
+            if stripped in seen and ("general education" in stripped.lower() or "not a diagnosis" in stripped.lower()):
+                continue
+            if stripped:
+                seen.add(stripped)
+            cleaned_lines.append(line)
+        reply = "\n".join(cleaned_lines).strip()
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error communicating with local LLM: {str(e)}")
 
