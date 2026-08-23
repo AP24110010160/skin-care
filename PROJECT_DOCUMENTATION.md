@@ -4,11 +4,11 @@
 
 ## 📌 Executive Summary
 
-**SkinSense AI** is an end-to-end, domain-adapted LLM application designed to provide reliable, educational skincare guidance, active ingredient pairing analysis, and symptom-to-condition differential analysis. 
+**SkinSense AI** is an end-to-end, domain-adapted **Small Language Model (SLM)** application designed to provide reliable, educational skincare guidance, active ingredient pairing analysis, and symptom-to-condition differential analysis. 
 
 The project addresses two critical challenges in consumer AI applications:
-1. **Domain Hallucination:** Standard general-purpose LLMs frequently substitute ingredients or misstate safety guidelines when handling active compounds (e.g., combining Retinol and Glycolic Acid).
-2. **Edge Deployment Efficiency:** Running large language models on local hardware with low latency and minimal RAM overhead.
+1. **Domain Hallucination:** Standard general-purpose models frequently substitute ingredients or misstate safety guidelines when handling active compounds (e.g., combining Retinol and Glycolic Acid).
+2. **Edge Deployment Efficiency:** Running Small Language Models (SLMs) on local hardware with low latency and minimal RAM overhead.
 
 ---
 

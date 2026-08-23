@@ -1,6 +1,6 @@
-# 🌿 SkinSense AI — Fine-Tuned Domain LLM for Skincare Guidance
+# 🌿 SkinSense AI — Fine-Tuned Domain SLM (Small Language Model) for Skincare Guidance
 
-SkinSense AI is an end-to-end domain-adapted LLM application designed to provide educational skincare guidance, active ingredient compatibility advice, and symptom differential analysis.
+SkinSense AI is an end-to-end domain-adapted Small Language Model (SLM) application designed to provide educational skincare guidance, active ingredient compatibility advice, and symptom differential analysis.
 
 ## 🚀 Key Features
 - **Local LoRA Fine-Tuning:** Fine-tuned `Qwen2.5-3B-Instruct` on a custom skincare dataset using Apple Silicon **MLX**.
